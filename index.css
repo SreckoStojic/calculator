@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0%;
+    font-family: 'Spartan', sans-serif;
+    overflow: hidden;
+}
+
+.css-main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #434A59;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.css-main-light {
+    background-color: #F2F2F2;
+    color: black;
+}
+
+.css-main-dark {
+    background-color: black;
+    color: #FFE53D;
+}
+
+.css-theme-label {
+    width: 540px;
+    text-align: right;
+    letter-spacing: 6px;
+    margin-bottom: -30px;
+    font-size: 12px;
+    line-height: 13.44px;
+    font-weight: 700;
+    padding-right: 5px;
+}
+
+.css-calc-label {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35.84px;
+}
+
+.css-theme-header {
+    width: 540px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.css-label-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.css-theme-slider {
+    width: 71px;
+    height: 26px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.css-main .css-calc-result {
+    width: 540px;
+    height: 128px;
+    text-align: right;
+    font-size: 48px;
+    line-height: 53.76px;
+    letter-spacing: -0.8px;
+    font-weight: 700px;
+    border-radius: 10px;
+    border: none;
+    padding-right: 30px;
+}
+
+.css-main-default .css-calc-result {
+    background-color: #181F33;
+    color: white;
+}
+
+.css-main-light .css-calc-result {
+    background-color: #EEEEEE;
+    color: black;
+}
+
+.css-main-dark .css-calc-result {
+    background-color: #331C4D;
+    color: yellow;  
+}
+
+.css-main .css-calc-keys {
+    width: 540px;
+    height: 480px;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-areas: 
+        "N7 N8 N9 DEL"
+        "N4 N5 N6 ADD"
+        "N1 N2 N3 SUB"
+        "POINT N0 DIV MULT"
+        "RESET RESET EQ EQ"
+    ;
+}
+
+.css-main-default .css-calc-keys {
+    background-color: #242D44;
+    color: #434A59; 
+}
+
+.css-main-light .css-calc-keys {
+    background-color: #979797;
+    color: #36362C; 
+}
+
+.css-main-dark .css-calc-keys {
+    background-color: #1E0936;
+    color: #FFE53D; 
+}
+
+.css-main .css-calc-btn {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 101px;
+    height: 64px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35.84px;
+    letter-spacing: -0.53px;
+}
+
+.css-main-default .css-calc-btn {
+    background-color: #EAE3DC;
+}
+
+.css-main-light .css-calc-btn {
+    background-color: #E5E4E1;
+}
+
+.css-main-dark .css-calc-btn {
+    background-color: #331C4D;
+}
+
+.css-calc-btn-bottom {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35.84px;
+    letter-spacing: -0.53px;
+    height: 64px;
+}
+
+.css-key-7 { grid-area: N7; }
+.css-key-8 { grid-area: N8; }
+.css-key-9 { grid-area: N9; }
+.css-main-default .css-key-DEL { grid-area: DEL; background-color: #647198; color: white; }
+.css-main-light .css-key-DEL { background-color: #378187; color: white; }
+.css-main-dark .css-key-DEL {background-color: #56077C; color: white; }
+
+.css-key-4 { grid-area: N4; }
+.css-key-5 { grid-area: N5; }
+.css-key-6 { grid-area: N6; }
+.css-key-ADD { grid-area: ADD; }
+
+.css-key-1 { grid-area: N1; }
+.css-key-2 { grid-area: N2; }
+.css-key-3 { grid-area: N3; }
+.css-key-SUB { grid-area: SUB; }
+
+
+.css-key-POINT { grid-area: POINT; }
+.css-key-0 { grid-area: N0; }
+.css-key-DIV { grid-area: DIV; }
+.css-key-MULT { grid-area: MULT; }
+
+
+.css-main-default .css-key-RESET { grid-area: RESET; background-color: #647198; color: white; }
+.css-main-light .css-key-RESET { grid-area: RESET; background-color: #378187; color: white; }
+.css-main-dark .css-key-RESET {grid-area: RESET; background-color: #56077C; color: white; }
+
+.css-main-default .css-key-EQ { grid-area: EQ; background-color: #D03F2F; color: white; }
+.css-main-light .css-key-EQ { grid-area: EQ; background-color: #C85402; color: white; }
+.css-main-dark .css-key-EQ {grid-area: EQ; background-color: #00DED0; color: black; }

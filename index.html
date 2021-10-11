@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <link rel="stylesheet" href="index.css">
+        <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="css-main css-main-default js-main">
+            <label class="css-theme-label">1 2 3</label>
+            <div class="css-theme-header">
+                <h1 class="css-calc-label">calc</h1>
+                <div class="css-label-slider">
+                    <label>theme</label>
+                    <input type="range" min="1" max="3" step="1" value="1" class="css-theme-slider js-theme-slider">
+                </div>
+            </div>
+            <input class="css-calc-result js-calc-result" type="text" name="result" value="0" readonly>
+            <form class="css-calc-keys js-calc-form">
+                <button class="js-key css-calc-btn css-key-7 js-key-7" onclick="changeResult('7')" name="key7" value="7">7</button>
+                <button class="js-key css-calc-btn css-key-8 js-key-8" name="key8" value="8">8</button>
+                <button class="js-key css-calc-btn css-key-9 js-key-9" name="key9 "value="9">9</button>
+                <button class="js-key css-calc-btn css-key-DEL js-key-DEL" name="keyDEL">DEL</button>
+
+                <button class="js-key css-calc-btn css-key-4 js-key-4" name="key4" value="4">4</button>
+                <button class="js-key css-calc-btn css-key-5 js-key-5" name="key5" value="5">5</button>
+                <button class="js-key css-calc-btn css-key-6 js-key-6" name="key6" value="6">6</button>
+                <button class="js-key css-calc-btn css-key-ADD js-key-ADD" name="keyADD" value="+">+</button>
+
+                <button class="js-key css-calc-btn css-key-1 js-key-1"name="key1" value="1">1</button>
+                <button class="js-key css-calc-btn css-key-2 js-key-2" name="key2" value="2">2</button>
+                <button class="js-key css-calc-btn css-key-3 js-key-3" name="key3" value="3">3</button>
+                <button class="js-key css-calc-btn css-key-SUB js-key-SUB" name="keySUB" value="-">-</button>
+
+                <button class="js-key css-calc-btn css-key-POINT js-key-POINT" name="keyPOINT" value=".">.</button>
+                <button class="js-key css-calc-btn css-key-0 js-key-0" name="key0" value="0">0</button>
+                <button class="js-key css-calc-btn css-key-DIV js-key-DIV" name="keyDIV" value="/">/</button>
+                <button class="js-key css-calc-btn css-key-MULT js-key-MULT" name="keyMULT" value="*">x</button>
+
+                <button class="js-key css-calc-btn-bottom css-key-RESET js-key-RESET" name="keyRESET">RESET</button>
+                <button class="js-key css-calc-btn-bottom css-key-EQ js-key-EQ" name="keyEQ" type="submit">=</button>
+            </form>
+        </div>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
