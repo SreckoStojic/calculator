@@ -39,15 +39,113 @@ document.querySelector(".js-theme-slider").addEventListener("click", function() 
     }
 });
 
-var input = [];
+let input = [];
+let inputString = "";
 const result = document.querySelector('.js-calc-result');
 
+
 function changeResult(param) {
-    alert(param);
-    result.innerHTML = param;
-    console.log(param);
+    if (input.length === 0 && parseInt(param).toString() === 'NaN') {
+        alert('Input must start with number.');
+    } else {
+        input.push(param);
+        inputString = input.toString().replaceAll(',', '');
+        result.value = inputString;
+    }
 }
 
+function resetResult() {
+    input = [];
+    result.value = 0;
+}
+
+function deleteLast() {
+    if (input.length > 1) {
+        input.pop(input.length - 1);
+        inputString = input.toString().replaceAll(',', '');
+        result.value = inputString;
+    } else {
+        resetResult();
+    }
+}
+
+function calculateResult() {
+    //inputString = eval(result.value);
+    //input = [];
+    //input.push(inputString);
+    //result.value = inputString;
+    let divPriority = false;
+    let multPriority = false;
+
+    input = createNewInputWithRegexSplit(inputString);
+    console.log(input);
+    let res = 0;
+
+    for (let i = 0; i < input.length; i++) {
+        if (input.includes('/')) {
+            divPriority = true;
+        }
+        if (input.includes('*')) {
+            multPriority = true;
+        }
+    }
+
+    console.log(`div priority = ${divPriority}    mult priority = ${multPriority}`);
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] === '+' && divPriority === false && multPriority === false) {
+            res = add(parseInt(input[i - 1]), parseInt(input[i + 1]));
+            input[i] = res;
+            input.splice(i + 1, 1);
+            input.splice(i - 1, 1);
+            inputString = input.toString().replaceAll(',', '');
+            if  (input.length > 1){
+                calculateResult();
+            }
+            break;
+        } else if  (input[i] === '-' && divPriority === false && multPriority === false) {
+            res = sub(parseInt(input[i - 1]), parseInt(input[i + 1]));
+            input[i] = res;
+            input.splice(i + 1, 1);
+            input.splice(i - 1, 1);
+            inputString = input.toString().replaceAll(',', '');
+            if  (input.length > 1){
+                calculateResult();
+            }
+            break;
+        }
+        else if (input[i] === '*' && divPriority === false) {
+            res = mult(parseInt(input[i - 1]), parseInt(input[i + 1]));
+            input[i] = res;
+            input.splice(i + 1, 1);
+            input.splice(i - 1, 1);
+            inputString = input.toString().replaceAll(',', '');
+            if  (input.length > 1){
+                calculateResult();
+            }
+            break;
+        }
+        else if (input[i] === '/') {
+            res = div(parseInt(input[i - 1]), parseInt(input[i + 1]));          
+            input[i] = res;
+            input.splice(i + 1, 1);
+            input.splice(i - 1, 1);
+            inputString = input.toString().replaceAll(',', '');
+            if (input.length > 1) {
+                calculateResult();
+            }
+            break;
+        }
+        
+        
+    }
+    result.value = input[0];
+}
+
+
+
+function createNewInputWithRegexSplit(inputString) {
+    return inputString.split(/(?=[+\-\/\*]+)|(?<=[+\-\/\*]+)/g);
+}
 
 function checkIfNumbers(a, b){
     if (typeof(a) === 'number' && typeof(b) === 'number') {
@@ -65,13 +163,13 @@ function add(a, b) {
 
 function sub(a, b) {
     if (checkIfNumbers(a, b)) {
-        return a + b;
+        return a - b;
     }
 }
 
 function mult(a, b) {
     if (checkIfNumbers(a, b)) {
-        return a + b;
+        return a * b;
     }
 }
 
@@ -80,7 +178,7 @@ function div(a, b) {
         if (b !== 0) {
             return a / b;
         } else {
-            throw new Error("Cannot divide by 0.")
+            throw new Error("Cannot divide by 0.");
         }
     }
 }
