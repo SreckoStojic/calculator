@@ -78,7 +78,7 @@ function calculateResult() {
     let multPriority = false;
 
     input = createNewInputWithRegexSplit(inputString);
-    console.log(input);
+    console.log(`${input}`);
     let res = 0;
 
     for (let i = 0; i < input.length; i++) {

@@ -194,3 +194,93 @@ body {
 .css-main-default .css-key-EQ { grid-area: EQ; background-color: #D03F2F; color: white; }
 .css-main-light .css-key-EQ { grid-area: EQ; background-color: #C85402; color: white; }
 .css-main-dark .css-key-EQ {grid-area: EQ; background-color: #00DED0; color: black; }
+
+
+@media screen and (max-width: 450px) {
+    .css-main {
+        background-color: #434A59;
+        color: white;
+    }
+
+    .css-main-light {
+        background-color: #F2F2F2;
+        color: black;
+    }
+    
+    .css-main-dark {
+        background-color: black;
+        color: #FFE53D;
+    }
+
+    .css-theme-header {
+        width: 327px;
+    }
+
+    .css-main .css-calc-result {
+        width: 327px;
+        height: 88px;
+    }
+
+    .css-main-default .css-calc-result {
+        background-color: #181F33;
+        color: white;
+    }
+    
+    .css-main-light .css-calc-result {
+        background-color: #EEEEEE;
+        color: black;
+    }
+    
+    .css-main-dark .css-calc-result {
+        background-color: #331C4D;
+        color: yellow;  
+    }
+
+    .css-main .css-calc-keys {
+        width: 327px;
+        height: 480px;
+    }
+
+    .css-main-default .css-calc-keys {
+        background-color: #242D44;
+        color: #434A59; 
+    }
+    
+    .css-main-light .css-calc-keys {
+        background-color: #979797;
+        color: #36362C; 
+    }
+    
+    .css-main-dark .css-calc-keys {
+        background-color: #1E0936;
+        color: #FFE53D;
+    }
+
+    .css-theme-slider {
+        height: 44px;
+    }
+
+    .css-main .css-calc-btn {
+        width: 60px;
+        font-size: 26px;
+    } 
+
+    .css-calc-btn-bottom {
+        font-size: 16px;
+        line-height: 17.92px;
+
+    }
+
+    .css-main-default .css-calc-btn {
+        background-color: #EAE3DC;
+    }
+    
+    .css-main-light .css-calc-btn {
+        background-color: #E5E4E1;
+    }
+    
+    .css-main-dark .css-calc-btn {
+        background-color: #331C4D;
+    }
+    
+}
