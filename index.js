@@ -93,7 +93,7 @@ function calculateResult() {
     console.log(`div priority = ${divPriority}    mult priority = ${multPriority}`);
     for (let i = 0; i < input.length; i++) {
         if (input[i] === '+' && divPriority === false && multPriority === false) {
-            res = add(parseInt(input[i - 1]), parseInt(input[i + 1]));
+            res = add(Number(input[i - 1]), Number(input[i + 1]));
             input[i] = res;
             input.splice(i + 1, 1);
             input.splice(i - 1, 1);
@@ -103,7 +103,7 @@ function calculateResult() {
             }
             break;
         } else if  (input[i] === '-' && divPriority === false && multPriority === false) {
-            res = sub(parseInt(input[i - 1]), parseInt(input[i + 1]));
+            res = sub(Number(input[i - 1]), Number(input[i + 1]));
             input[i] = res;
             input.splice(i + 1, 1);
             input.splice(i - 1, 1);
@@ -114,7 +114,7 @@ function calculateResult() {
             break;
         }
         else if (input[i] === '*' && divPriority === false) {
-            res = mult(parseInt(input[i - 1]), parseInt(input[i + 1]));
+            res = mult(Number(input[i - 1]), Number(input[i + 1]));
             input[i] = res;
             input.splice(i + 1, 1);
             input.splice(i - 1, 1);
@@ -125,7 +125,7 @@ function calculateResult() {
             break;
         }
         else if (input[i] === '/') {
-            res = div(parseInt(input[i - 1]), parseInt(input[i + 1]));          
+            res = div(Number(input[i - 1]), Number(input[i + 1]));          
             input[i] = res;
             input.splice(i + 1, 1);
             input.splice(i - 1, 1);
